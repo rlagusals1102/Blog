@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="http://localhost:3000/static/css/main.css">
+</head>
+<body>
+  <div class="wrap middle">
+    <img
+      src="http://localhost:3000/static/images/main-picture.jpg"
+      class="main-banner-img" />
+
+    <div style="height: 15px"></div>
+
+    <h1><a href="/">BLOG</a></h1>
+
+    <div style="height: 15px"></div>
+
+    <div style="text-align: right;">
+      <% if (typeof user === 'object' && user) { %>
+        <div>
+          <span><%= user.name %>님 반갑습니다!</span>
+          <form action="/logout" method="post">
+            <button type="submit">로그아웃</button>
+          </form>
+        </div>
+      <% } else { %>
+        <div>
+          <a href="/login">로그인</a>
+        </div>
+      <% }%>
+    </div>
+
+    <div style="height: 15px"></div>
